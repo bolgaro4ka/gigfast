@@ -11,5 +11,6 @@ class MusicAdmin(admin.ModelAdmin):
 @admin.register(Album)
 class AlbumAdmin(admin.ModelAdmin):
     list_display = ('title', 'likes')
+    filter_horizontal = ('songs',)
 
     

@@ -18,7 +18,15 @@ export default function Music(props) {
     useEffect(() => {
         const timerLoop = setInterval(() => {
             setTimer(`${toNormalTime(Math.round(audioRef.current.currentTime))}/${toNormalTime(Math.round(audioRef.current.duration))}`); 
-            timeChangeRef.current.value = Math.round(audioRef.current.currentTime); 
+            const one_percent = audioRef.current.duration/1000
+            console.log(one_percent, 'one percent. All ',  audioRef.current.duration, 'cur ', audioRef.current.currentTime)
+            timeChangeRef.current.value = audioRef.current.currentTime/(one_percent)
+            console.log('res ', timeChangeRef.current.value)
+            
+            //const one_percent = audioRef.current.duration/100
+            //setTimer(`${toNormalTime(Math.round(audioRef.current.currentTime))}/${toNormalTime(Math.round(audioRef.current.duration))}`)
+            //audioRef.current.currentTime = (one_percent)*e.target.value
+
             if (audioRef.current.currentTime== audioRef.current.duration) {
                 console.log('end')
                 setStatus(false)
@@ -42,7 +50,8 @@ export default function Music(props) {
     
 
     function handlePlay(){
-        timeChangeRef.current.value = Math.round(audioRef.current.currentTime)
+        const one_percent = audioRef.current.duration/1000
+        timeChangeRef.current.value = audioRef.current.currentTime/(one_percent)
 
         if (audioRef.current.paused) {
             audioRef.current.play();
@@ -65,7 +74,7 @@ export default function Music(props) {
 
 
             console.log(e.target.value,audioRef.current.duration)
-        const one_percent = audioRef.current.duration/100
+        const one_percent = audioRef.current.duration/1000
         setTimer(`${toNormalTime(Math.round(audioRef.current.currentTime))}/${toNormalTime(Math.round(audioRef.current.duration))}`)
         audioRef.current.currentTime = (one_percent)*e.target.value
         
@@ -80,7 +89,7 @@ export default function Music(props) {
             <div className={`${Style.controls} `}>
                 <p className="timer"></p>
                 <button onClick={handlePlay} className={`${Style.play} `}>{!status ? '►' : '||'}</button>
-                <input type="range" min={0} max={100} onChange={handleTimeChange} ref={timeChangeRef} defaultValue={0} className={`${Style.timeChanger} `}/>
+                <input type="range" min={0} max={1000} onChange={handleTimeChange} ref={timeChangeRef} defaultValue={0} className={`${Style.timeChanger} `}/>
                 
                 <p>{timer}</p>
                 <input type="range" min={0} max={100} onChange={handleVolume} defaultValue={100} className={`${Style.volume} `}/>

@@ -19,3 +19,11 @@ class MusicList(generics.ListCreateAPIView):
 class AlbumList(generics.ListCreateAPIView):
     queryset = Album.objects.all()
     serializer_class = AlbumSerializer
+
+class MusicDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Music.objects.all()
+    serializer_class = MusicSerializer
+
+class AlbumDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Album.objects.all()
+    serializer_class = AlbumSerializer
