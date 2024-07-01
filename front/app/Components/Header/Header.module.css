@@ -1,0 +1,23 @@
+.header {
+    width: 100%;
+    background-color: black;
+    color: white;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    border-bottom: 2px solid;
+    border-image: var(--secondary-glow) 1;
+    margin-bottom: 10px;
+   
+}
+
+.header .logo {
+    font-size: 48px;
+}
+
+.header .links {
+    display: flex;
+    gap: 15px;
+}
