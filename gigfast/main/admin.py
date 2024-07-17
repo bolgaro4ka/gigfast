@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Music, Album
+from .models import Music, Album, Category
 # Register your models here.
 
 
@@ -13,4 +13,9 @@ class AlbumAdmin(admin.ModelAdmin):
     list_display = ('title', 'likes')
     filter_horizontal = ('songs',)
 
-    
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+
+    filter_horizontal = ('albums',)

@@ -1,0 +1,7 @@
+.version {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00134863;
+    padding: 5px;
+}

@@ -10,6 +10,7 @@
     border-bottom: 2px solid;
     border-image: var(--secondary-glow) 1;
     margin-bottom: 10px;
+    position: fixed;
    
 }
 
@@ -17,7 +18,14 @@
     font-size: 48px;
 }
 
-.header .links {
+.header .links, .button {
     display: flex;
     gap: 15px;
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+}
+
+.button:hover {
+    cursor: pointer;
 }

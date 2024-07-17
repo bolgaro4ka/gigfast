@@ -30,6 +30,8 @@ urlpatterns = [
     path('api/v1/music/<int:pk>/', views.MusicDetail.as_view()),
     path('api/v1/album/', views.AlbumList.as_view()),
     path('api/v1/album/<int:pk>/', views.AlbumDetail.as_view()),
+    path('api/v1/category/', views.CategoryList.as_view()),
+    path('api/v1/category/<int:pk>/', views.CategoryDetail.as_view()),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ] 
 

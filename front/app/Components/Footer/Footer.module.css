@@ -17,7 +17,14 @@
     font-size: 48px;
 }
 
-.footer .links {
+.footer .links, .button {
     display: flex;
     gap: 15px;
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+}
+
+.button:hover {
+    cursor: pointer;
 }

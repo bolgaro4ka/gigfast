@@ -1,0 +1,41 @@
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 50px;
+    flex-direction: column;
+    background: linear-gradient(
+      to top,
+      black,
+      rgba(1, 65, 255, 0),
+      rgba(1, 65, 255, 0),
+      rgba(1, 65, 255, 0.3),
+      rgba(1, 65, 255, 0),
+      rgba(1, 65, 255, 0),
+      black
+    );
+
+    background-repeat: no-repeat;
+
+
+  }
+
+  .hero h1 {
+    font-size: 50px;
+    padding-bottom: 10px;
+  }
+
+  .hero .play {
+    color: #b3b3b3;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .hero div {
+    text-align: center;
+  }
+
+  .subtitle {
+    padding-top: 5px;
+  }

@@ -27,8 +27,8 @@ SECRET_KEY = 'django-insecure-6la2+opa_#(+ojyf5ksv@&495!2jgse9u9fl%re-rqk$bbi!_$
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
-CSRF_TRUSTED_ORIGINS=["http://127.0.0.1:3001"]
+CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS=["http://127.0.0.1:3001", "https://gigfast.pai1nik.ru"]
 
 
 # Application definition
@@ -42,11 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
     'rest_framework',
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -86,7 +88,8 @@ DATABASES = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3001'
+    'http://localhost:3001',
+    'https://gigfast.pai1nik.ru'
 ]
 
 

@@ -2,16 +2,23 @@
 import Music from "../Music/Music";
 import axios from "axios";
 import Style from "./MusicList.module.css"
-
+import { BASEURL, MUSIC, ALBUM, ADMIN }  from '../../config/config.js'
 
 export default async function MusicList(props) {
-    const data = await axios.get(`http://127.0.0.1:8000/api/v1/music/${props.id ? props.id : null}`)
-        .then((response) => {
-            return (props.id ? [response.data] : response.data)
-        })
-        .catch((error) => {
-            console.log(error)
-        })
+    var ids = props.ids
+    if (props.ids) {
+        
+        var data = []
+        for (let i of ids) {
+            let temp = await axios.get(`${MUSIC}${i}/`).then((response) => {return response.data}).catch((error) => {console.log(error)})
+
+        data.push(temp)
+    }
+    } else {
+        var data = await axios.get(`${MUSIC}`).then((response) => {return response.data}).catch((error) => {console.log(error)})
+
+    }
+    
 
 
 
