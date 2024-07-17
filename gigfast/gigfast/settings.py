@@ -27,6 +27,7 @@ SECRET_KEY = 'sdfsdf'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS=["https://gigfast.pai1nik.ru", "https://webbox.paia1nik.ru"]
 CORS_ALLOW_ALL_ORIGINS = True
 CSRF_TRUSTED_ORIGINS=["http://127.0.0.1:3001", "https://gigfast.pai1nik.ru"]
 
