@@ -48,7 +48,6 @@ export default function Music(props) {
 
         return `${Math.floor(sec/60)}:${String(sec%60).padStart(2, "0")}`
     } else {
-            window.location.reload()
             return '-:-'
         }
     }
