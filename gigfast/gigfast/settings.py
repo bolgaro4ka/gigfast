@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS=["https://gigfast.pai1nik.ru", 'https://gigfast-backend.pai1nik.ru']
+CSRF_TRUSTED_ORIGINS=["https://gigfast.paia1nik.ru", 'https://gigfast-backend.paia1nik.ru']
 
 CORS_ALLOW_ALL_ORIGINS = True
 
